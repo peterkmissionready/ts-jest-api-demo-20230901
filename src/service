@@ -1,0 +1,32 @@
+import { Task } from "./types/Task";
+import { Request, Response } from 'express';
+
+
+let tasks: Task[] = [
+    {
+        id: 1,
+        name: 'Mission 01',
+        description: 'Chatbot',
+        isCompleted: false,
+    }
+];
+
+export const getAllTasks = (req: Request, res: Response) => {
+    // return tasks;
+    res.send(tasks);
+};
+
+interface createTaskInput {
+    name: string
+    description:string
+}
+export const createTask = (input: createTaskInput) => {
+        const newTask = {
+            id: tasks.length + 1,
+            name: input.name,
+            description: input.description,
+            isCompleted: false,
+        };
+        tasks.push(newTask);
+        return newTask;
+};
