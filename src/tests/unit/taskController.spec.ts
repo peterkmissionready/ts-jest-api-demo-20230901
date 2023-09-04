@@ -24,19 +24,18 @@ describe('getAllTasks', () => {
     })
 })
 
-describe('getOneTasks', () => {
+describe('getOneTask', () => {
     test('should send 404 if not exists', () => {
         // Arrange
         const req = createRequest()
         const res = createResponse()
-        const expected = [
+        const expected =
             {
                 id: 1,
                 name: 'Mission 01',
                 description: 'Chatbot',
                 isCompleted: false,
-            },
-        ];
+            };
         req.params.id = '1'
 
         // Act
