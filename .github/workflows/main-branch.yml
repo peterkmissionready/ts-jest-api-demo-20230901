@@ -10,7 +10,7 @@ on:
 
 env:
   PROJECT_ID: cd-demo-live-better # TODO: update Google Cloud project id
-  SERVICE: Tasks-api # TODO: update Cloud Run service name
+  SERVICE: tasks-api # TODO: update Cloud Run service name
   REGION: australia-southeast2 # TODO: update Cloud Run service region
 
 jobs:
