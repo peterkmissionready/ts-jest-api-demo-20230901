@@ -6,14 +6,14 @@ export const getAllTasks = (req: Request, res: Response) => {
   res.send(tasks)
 };
 
-// export const createOneTask = (req: Request, res: Response) => {
-//   const name = req.body.name
-//   const description = req.body.description
+export const createOneTask = (req: Request, res: Response) => {
+  const name = req.body.name
+  const description = req.body.description
 
-//   const newTask = taskService.createOneTask(name, description)
+  const newTask = taskService.createOneTask(name, description)
 
-//   res.status(201).send(newTask)
-// }
+  res.status(201).send(newTask)
+}
 
 export const getOneTask = (req: Request, res: Response) => {
   const taskId = parseInt(req.params.id)
@@ -26,22 +26,22 @@ export const getOneTask = (req: Request, res: Response) => {
   }
 }
 
-// export const deleteTask = (req: Request, res: Response) => {
-//   const taskId = parseInt(req.params.id)
+export const deleteTask = (req: Request, res: Response) => {
+  const taskId = parseInt(req.params.id)
 
-//   try {
-//     const hasDeleted = taskService.deleteTask(taskId)
-//     if (hasDeleted) {
-//       res.status(204).send(`Task ${taskId} deleted successfully!`)
-//     } else {
-//       res.status(500).send(`Task ${taskId} deletion failed!`)
-//     }
-//   } catch (e) {
-//     res.status(404).send(e)
-//   }
-// }
+  try {
+    const hasDeleted = taskService.deleteTask(taskId)
+    if (hasDeleted) {
+      res.status(204).send(`Task ${taskId} deleted successfully!`)
+    } else {
+      res.status(500).send(`Task ${taskId} deletion failed!`)
+    }
+  } catch (e) {
+    res.status(404).send(e)
+  }
+}
 
-/* export const updateTask = (req: Request, res: Response) => {
+export const updateTask = (req: Request, res: Response) => {
   const taskId = parseInt(req.params.id)
 
   const name = req.body.name
@@ -75,4 +75,8 @@ export const updateTaskPartial = (req: Request, res: Response) => {
   } catch (e) {
     res.status(404).send(e)
   }
-} */
+}
+
+//04/09/2023 command history for Continuous Delivery-20230522_173018-Meeting Recording.mp4
+
+// yarn remove @jest-mock/express
